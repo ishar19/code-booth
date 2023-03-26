@@ -10,7 +10,7 @@ const Rules = () => {
     "Once submitted, teams cannot re-submit their solution.",
   ];
   const renderRules = rules.map((rule) => (
-    <div className="bg-white bg-opacity-30 drop-shadow-lg backdrop-blur-lg px-3 py-6 text-2xl flex items-center justify-center rounded-md">
+    <div className="bg-white bg-opacity-30 drop-shadow-lg backdrop-blur-lg h-[15vh] w-[20vw] p-10 text-2xl flex items-center justify-center rounded-md">
       {rule}
     </div>
   ));
