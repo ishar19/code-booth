@@ -15,8 +15,8 @@ const Rules = () => {
     </div>
   ));
   return (
-    <div className="mt-12 flex flex-col items-center">
-      <div className="bg-white bg-opacity-30 drop-shadow-lg backdrop-blur-lg text-5xl p-4 rounded-md">
+    <div className="mt-20 flex flex-col items-center">
+      <div className="bg-white bg-opacity-30 drop-shadow-lg backdrop-blur-lg text-5xl py-4 px-7 rounded-md">
         Rules of the game
       </div>
       <div className="grid grid-cols-3 gap-5 mx-12 p-10">{renderRules}</div>
