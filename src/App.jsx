@@ -1,12 +1,11 @@
+import { Navigate, Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
 function App() {
-
   return (
-    <div className="w-[100vw] h-[100vh] flex justify-center items-center">
-    <h1 className="text-4xl font-bold animate-bounce ">
-      Code Booth
-    </h1>
-    </div>
-  )
+    <Routes>
+      <Route path="/" element={<Home />} />
+    </Routes>
+  );
 }
 
-export default App
+export default App;
