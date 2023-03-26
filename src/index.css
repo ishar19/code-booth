@@ -1,3 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Delius+Unicase&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer components {
+  .bg-glass {
+        background: linear-gradient(102.58deg, rgba(255, 255, 255, 0.6) 5.02%, rgba(255, 255, 255, 0.3) 97.15%);
+        box-shadow: 0px 10px 16px 4px rgba(0, 0, 0, 0.15);
+        /* filter: blur(1px); */
+        backdrop-filter: blur(40px);
+    }
+}

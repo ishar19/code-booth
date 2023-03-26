@@ -6,6 +6,9 @@ module.exports = {
       backgroundImage: {
         backgroundImg: "url('../src/assets/Backdrop.png')",
       },
+      fontFamily:{
+          DMSans: ['DM Sans', "sans-serif"]
+      }
     },
   },
   plugins: [],

@@ -5,7 +5,7 @@ import ProblemStatements from "../components/ProblemStatements";
 import Rules from "../components/Rules";
 const Home = () => {
   return (
-    <div className="bg-backgroundImg pb-20">
+    <div className="bg-backgroundImg pb-4">
       <Navbar />
       <Banner />
       <Rules />

@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import logo from "../assets/Logo.png";
 const Navbar = () => {
   return (
-    <div className="flex items-center text-2xl justify-around  border-b-2 border-gray-500">
-      <img src={logo} alt="logo" />
-      <div className="flex gap-6">
+    <div className="sm:flex-col md:flex lg:flex-row text-xl bg-glass sticky top-0 z-20 items-center font-DMSans">
+      <img src={logo} alt="logo" className="" />
+      <div className="flex justify-evenly mx-auto text-lg sm:text-lg md:text-2xl lg:text-2xl min-w-[40vw]">
         <Link to="/">Home</Link>
         <Link to="/submissions">Submissions</Link>
         <Link to="/Leaderboard">Leaderboard</Link>

@@ -10,16 +10,16 @@ const Rules = () => {
     "Once submitted, teams cannot re-submit their solution.",
   ];
   const renderRules = rules.map((rule) => (
-    <div className="bg-white bg-opacity-30 drop-shadow-lg backdrop-blur-lg h-[15vh] w-[20vw] p-10 text-2xl flex items-center justify-center rounded-md">
+    <div className="w-fit p-4 sm:p-4 md:p-8 lg:p-10 text-xl sm:text-xl md:text-2xl lg:text-3xl rounded-2xl bg-glass">
       {rule}
     </div>
   ));
   return (
-    <div className="mt-20 flex flex-col items-center">
-      <div className="bg-white bg-opacity-30 drop-shadow-lg backdrop-blur-lg text-5xl py-4 px-7 rounded-md">
+    <div className="mt-20 flex flex-col items-center font-DMSans">
+      <div className="bg-glass text-3xl sm:text-3xl md:text-3xl lg:text-5xl py-4 px-7 rounded-md w-[80vw] md:w-[60vw] lg:w-[60vw] text-center">
         Rules of the game
       </div>
-      <div className="grid grid-cols-3 gap-5 mx-12 p-10">{renderRules}</div>
+      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-5 mx-12 p-10">{renderRules}</div>
     </div>
   );
 };
