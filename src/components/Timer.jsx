@@ -4,11 +4,11 @@ import '@leenguyen/react-flip-clock-countdown/dist/index.css';
 const Timer = ()=>{
     return(
     <>
-<div className="mt-20 flex flex-col items-center font-DMSans gap-4">
+    <div className="mt-20 flex flex-col items-center font-DMSans gap-4">
       <div className="bg-glass text-3xl sm:text-3xl md:text-3xl lg:text-5xl py-4 px-7 rounded-md w-[80vw] md:w-[60vw] lg:w-[60vw] text-center">
        Event Starts In
       </div>
-      <FlipClockCountdown to={new Date(1680706800).getTime()*1000} 
+      <FlipClockCountdown to={new Date(1680706800).getTime()*1000}  // timestamp for event starting
         labelStyle={{color:"black"}}
         separatorStyle={{color:"black"}}
         digitBlockStyle={{

@@ -7,7 +7,7 @@ const Navbar = () => {
       <img src={logo} alt="logo" className="" />
       <div className="flex justify-evenly mx-auto text-lg sm:text-lg md:text-2xl lg:text-2xl min-w-[40vw]">
         <Link to="/">Home</Link>
-        <Link to="/submissions">Submissions</Link>
+        <Link to="/submit">Submissions</Link>
         <Link to="/Leaderboard">Leaderboard</Link>
       </div>
     </div>
