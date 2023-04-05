@@ -2,7 +2,11 @@ import React,{useState} from "react";
 import Navbar from "../components/Navbar";
 import firebaseApp from "../../firebaseConfig";
 import { doc, setDoc, getFirestore } from "firebase/firestore"; 
+import toast, { Toaster } from 'react-hot-toast';
+
 const db = getFirestore(firebaseApp);
+const successToast =()=> toast.success("Submitted, go drink water")
+const failureToast =()=> toast.error("Something happened, scream for help")
 
 const Submission = ()=>{
       const [category, setCategory] = useState("category");
@@ -24,12 +28,31 @@ const Submission = ()=>{
       }
       const handleSubmission = async(e)=>{
         e.preventDefault()
-        await setDoc(doc(db, "submissions", submission.team), {
+        try{
+            await setDoc(doc(db, "submissions", submission.team), {
             ...submission,
             category:category,
             statement:statement,
             time:new Date()
-        }).then(()=>alert("noice")).catch((e)=>console.log(e));
+        }).then(()=>successToast())
+        }
+        catch(err){
+            console.log(err)
+            failureToast()
+        }
+        try{  
+            await setDoc(doc(db, "scores", submission.team), {
+            ...submission,
+            category:category,
+            statement:statement,
+            time:new Date(),
+            score:parseInt(0)
+        })
+        }
+        catch(err){
+            console.log(err)
+            failureToast()
+        }
 
       }
     return (
@@ -61,6 +84,7 @@ const Submission = ()=>{
                 <input value={submission.link}  onChange={handleChange} name="link"  className="bg-glass text-xl sm:text-xl md:text-2xl lg:text-3xl w-[80vw] p-4 placeholder:text-black" placeholder="Doc Link"></input>
                 <button onClick={handleSubmission}  className="text-xl sm:text-xl md:text-2xl lg:text-3xl w-[35vw] p-4 bg-[#4285F4] rounded-md text-white">Submit</button>
             </form>
+            <Toaster />
         </div>
     )
 }
