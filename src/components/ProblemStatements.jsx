@@ -7,14 +7,16 @@ const ProblemStatements = () => {
     {
       name: "DSA",
       img: dsa,
+      link:"https://www.notion.so/ishar19/DSA-f562a4928239413d9cb72996c699603b"
     },
     {
       name: "Web",
       img: web,
+      link:"https://www.notion.so/ishar19/DEV-9470fb4b597143849539f24a1ebffd9b"
     },
   ];
   const renderProblems = problems.map((problem) => (
-    <div className="bg-glass flex w-[80vw] md:w-[40vw] lg:w-[40vw] gap-5 p-10 flex-col justify-center items-center">
+    <div onClick={()=>window.open(problem.link)}  className="bg-glass flex w-[80vw] md:w-[40vw] lg:w-[40vw] gap-5 p-10 flex-col justify-center items-center">
       <img src={problem.img} />
       <h2 className="text-3xl">{problem.name}</h2>
     </div>

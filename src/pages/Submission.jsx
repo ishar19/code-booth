@@ -1,13 +1,13 @@
 import React,{useState} from "react";
 import Navbar from "../components/Navbar";
 import firebaseApp from "../../firebaseConfig";
-import { doc, setDoc, getFirestore } from "firebase/firestore"; 
+import { doc, setDoc, getFirestore, getDoc } from "firebase/firestore"; 
 import toast, { Toaster } from 'react-hot-toast';
 
 const db = getFirestore(firebaseApp);
 const successToast =()=> toast.success("Submitted, go drink water")
 const failureToast =()=> toast.error("Something happened, scream for help")
-
+const againToast = ()=> toast.error("Oops, can't submit again my friend")
 const Submission = ()=>{
       const [category, setCategory] = useState("category");
       const [statement, setStatement] = useState("statement");
@@ -28,8 +28,36 @@ const Submission = ()=>{
       }
       const handleSubmission = async(e)=>{
         e.preventDefault()
+        const docRef = doc(db, "submissions", submission.team);
+        const docSnap = await getDoc(docRef);
+        if(docSnap.exists()){
+            againToast()
+            return
+        }
         try{
             await setDoc(doc(db, "submissions", submission.team), {
+            ...submission,
+            category:category,
+            statement:statement,
+            time:new Date()
+        }).then(()=>successToast())
+        }
+        catch(err){
+            console.log(err)
+            failureToast()
+        }
+      }
+
+      const handleFinalSubmission = async(e)=>{
+        e.preventDefault()
+        const docRef = doc(db, "final", submission.team);
+        const docSnap = await getDoc(docRef);
+        if(docSnap.exists()){
+            againToast()
+            return
+        }
+        try{
+            await setDoc(doc(db, "final", submission.team), {
             ...submission,
             category:category,
             statement:statement,
@@ -53,7 +81,6 @@ const Submission = ()=>{
             console.log(err)
             failureToast()
         }
-
       }
     return (
         <div className="bg-backgroundImg pb-4 font-DMSans min-h-full min-w-full">
