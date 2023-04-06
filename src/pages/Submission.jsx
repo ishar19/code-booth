@@ -109,7 +109,7 @@ const Submission = ()=>{
                     </select>
                 </div>
                 <input value={submission.link}  onChange={handleChange} name="link"  className="bg-glass text-xl sm:text-xl md:text-2xl lg:text-3xl w-[80vw] p-4 placeholder:text-black" placeholder="Doc Link"></input>
-                <button onClick={handleSubmission}  className="text-xl sm:text-xl md:text-2xl lg:text-3xl w-[35vw] p-4 bg-[#4285F4] rounded-md text-white">Submit</button>
+                <button onClick={handleFinalSubmission}  className="text-xl sm:text-xl md:text-2xl lg:text-3xl w-[35vw] p-4 bg-[#4285F4] rounded-md text-white">Submit</button>
             </form>
             <Toaster />
         </div>
