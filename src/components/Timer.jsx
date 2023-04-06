@@ -8,7 +8,7 @@ const Timer = ()=>{
       <div className="bg-glass text-3xl sm:text-3xl md:text-3xl lg:text-5xl py-4 px-7 rounded-md w-[80vw] md:w-[60vw] lg:w-[60vw] text-center">
        Event Starts In
       </div>
-      <FlipClockCountdown to={new Date(1680759000).getTime()*1000}  // timestamp for event starting
+      <FlipClockCountdown to={new Date(1680757200).getTime()*1000}  // timestamp for event starting
         labelStyle={{color:"black"}}
         separatorStyle={{color:"black"}}
         digitBlockStyle={{
