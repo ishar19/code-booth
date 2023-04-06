@@ -12,6 +12,9 @@ const Home = () => {
       <Rules />
       <Timer/>
       <ProblemStatements />
+      <div className="bg-glass my-3 p-4 text-xl sm:text-xl md:text-2xl lg:text-3xl mx-auto text-center">
+        Made with ❣ by Ishar, Bhavya and Diksha
+       </div>
     </div>
   );
 };
